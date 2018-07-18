@@ -26,7 +26,7 @@ def handle_category(category, writer):
     for file_name in files:
         with open(category_dir + '/' + file_name, 'r') as file:
             print("reading file: " + file.name)
-            contents = file.read()
+            contents = file.read().replace("\n", " ")
             writer.writerow({'text': contents, 'class': category})
 
 
